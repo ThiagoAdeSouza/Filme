@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<a href="{% url 'playlist_create'%}" class="btn btn-primary mb-3">CriarPlaylist </a>
+{% for playlist in object_list %}
+    <li>
+        {{ playlist.nome }}
+       
+        <a href="{% url 'playlist_detail' playlist.pk %}">Detalhes</a>
+        <a href="{% url 'playlist_update' playlist.pk %}">Editar</a>
+        <a href="{% url 'playlist_delete' playlist.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+
+</div>
+{% endblock %}
